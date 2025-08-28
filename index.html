@@ -1,313 +1,371 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dra. Haiane Castro • Psicologia</title>
-  <meta name="description" content="Psicóloga para jovens e adultos. Atendimento online e presencial. Ansiedade, depressão, relacionamentos e desenvolvimento pessoal.">
-  <style>
-    :root{
-      --bg:#ffffff;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--brand:#0b1220;--ring:#0ea5e9;
-      --card:#ffffff;--shadow:0 10px 30px rgba(2,6,23,.08);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:1120px;margin-inline:auto;padding:0 20px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:.875rem 1.25rem;border-radius:999px;font-weight:600;border:1px solid var(--line);background:#fff;box-shadow:0 1px 2px rgba(2,6,23,.04)}
-    .btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
-    .btn:hover{transform:translateY(-1px)}
-    .tag{display:inline-flex;gap:.5rem;align-items:center;font-size:.75rem;color:#0f172a;padding:.375rem .75rem;border:1px solid var(--line);border-radius:999px;background:#fff}
-    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:rgba(255,255,255,.7);border-bottom:1px solid var(--line);z-index:50}
-    .nav{height:64px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:.75rem;align-items:center}
-    .brand .logo{height:32px;width:32px;border-radius:12px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.75rem}
-    .menu{display:none;gap:1.25rem}
-    .menu a{font-size:.95rem;color:#1f2937}
-
-    /* Hero */
-    .hero{padding:64px 0 48px}
-    .h1{font-size:clamp(2rem,5vw,3.25rem);line-height:1.15;letter-spacing:-.02em;font-weight:700}
-    .lead{color:var(--muted);font-size:clamp(1rem,2.2vw,1.125rem);max-width:60ch}
-    .hero-grid{display:grid;gap:40px;grid-template-columns:1.2fr .8fr}
-    .figure{position:relative;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);overflow:hidden;background:linear-gradient(140deg,#f8fafc, #eef2ff 30%, #ecfeff)}
-    .figure .avatar{height:96px;width:96px;border-radius:999px;background:#e2e8f0;margin:28px auto}
-
-    /* Sections */
-    section{padding:56px 0}
-    h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.01em}
-    .muted{color:var(--muted)}
-    .grid-3{display:grid;gap:20px;grid-template-columns:repeat(3,1fr)}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:22px}
-
-    /* Timeline */
-    .timeline{position:relative;border-left:2px solid var(--line);margin-left:10px;padding-left:18px}
-    .timeline li{margin:18px 0}
-    .dot{position:absolute;left:-6px;transform:translateX(-50%);width:10px;height:10px;background:var(--brand);border-radius:999px;margin-top:8px}
-
-    /* Testimonials */
-    .grid-auto{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    blockquote{margin:0;color:#111827}
-    figcaption{color:var(--muted);font-size:.9rem;margin-top:8px}
-
-    /* Contact */
-    form{display:grid;gap:14px}
-    input,textarea{width:100%;padding:.9rem 1rem;border:1px solid var(--line);border-radius:14px;font:inherit;background:#fff}
-    input:focus,textarea:focus{outline:2px solid transparent;box-shadow:0 0 0 4px rgba(14,165,233,.25)}
-    textarea{min-height:120px;resize:vertical}
-
-    /* Footer */
-    footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.95rem}
-
-    /* Responsive */
-    @media (max-width:960px){
-      .menu{display:none}
-      .hero-grid{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width:640px){
-      .grid-3{grid-template-columns:1fr}
-    }
-  </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Professor Harry — Aulas de Música</title>
+    <meta name="description"
+        content="Aulas de música modernas com o Professor Harry: violão, teclado, canto e teoria musical. Metodologia atual e foco no seu repertório." />
+    <meta name="theme-color" content="#0f1117" />
+    <!-- Favicon (nota musical SVG inline) -->
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M9 3v12.26A3.99 3.99 0 0 0 7 15a4 4 0 1 0 4 4V8h6V3H9z"/></svg>' />
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- Background glow -->
-  <div aria-hidden="true" style="position:fixed;inset:0;z-index:-1;overflow:hidden">
-    <div style="position:absolute;top:-80px;left:50%;width:700px;height:700px;translate:-50% 0;filter:blur(70px);background:radial-gradient(600px 600px at 50% 30%, #e2e8f0, transparent)"></div>
-    <div style="position:absolute;top:-60px;right:-10%;width:440px;height:440px;filter:blur(70px);background:radial-gradient(400px 400px at 60% 40%, #dbeafe, transparent)"></div>
-  </div>
-
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#inicio" aria-label="Ir para o início">
-        <span class="logo" aria-hidden>HC</span>
-        <span>
-          <strong>Dra. Haiane Castro</strong><br>
-          <small class="muted">Psicóloga • CRP 00/00000</small>
-        </span>
-      </a>
-      <nav class="menu" aria-label="principal">
-        <a href="#atuacao">Atuação</a>
-        <a href="#formacoes">Formações</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#contato">Contato</a>
-      </nav>
-      <a class="btn" href="#contato">Agendar sessão →</a>
+    <!-- Decorative floating blobs (Google AI-ish) -->
+    <div aria-hidden="true" style="position:fixed;inset:auto -10% 10% -10%;z-index:-1;filter:blur(60px);opacity:.5">
+        <div
+            style="width:340px;height:340px;border-radius:999px;background:radial-gradient(circle at 30% 30%, var(--accent2), transparent 60%);">
+        </div>
     </div>
-  </header>
 
-  <main id="inicio" class="container">
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-grid">
-        <div>
-          <h1 id="hero-title" class="h1">Cuidado psicológico com clareza, empatia e ciência.</h1>
-          <p class="lead">Atendo jovens e adultos em terapia individual e de casais. Minha abordagem integra evidências científicas, acolhimento e planos personalizados para ansiedade, depressão, estresse, relacionamentos e desenvolvimento pessoal. Atendimento <strong>online</strong> e <strong>presencial</strong>.</p>
-          <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap">
-            <a class="btn primary" href="#contato">Agendar avaliação</a>
-            <a class="btn" href="#servicos">Ver serviços</a>
-          </div>
-          <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;color:#334155;font-size:.85rem">
-            <span class="tag"><span style="width:8px;height:8px;border-radius:999px;background:#10b981"></span>Atendimento online</span>
-            <span class="tag"><span style="width:8px;height:8px;border-radius:999px;background:#3b82f6"></span>Presencial</span>
-            <span class="tag"><span style="width:8px;height:8px;border-radius:999px;background:#8b5cf6"></span>Sigilo garantido</span>
-          </div>
+    <header>
+        <div class="container nav">
+            <a class="brand" href="#top" aria-label="Página inicial">
+                <span class="logo" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#0b0f15" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 3v12.26A3.99 3.99 0 0 0 7 15a4 4 0 1 0 4 4V8h6V3H9z" />
+                    </svg>
+                </span>
+                <span>harry.música</span>
+            </a>
+            <nav aria-label="principal">
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#aulas">Aulas</a></li>
+                    <li><a href="#amostras">Amostras</a></li>
+                    <li><a href="#precos">Planos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <button id="themeBtn" class="theme-toggle" aria-label="Alternar tema"><span>🌓</span><span
+                    style="font-weight:700">Tema</span></button>
         </div>
-        <figure class="figure" aria-label="Foto/brand da psicóloga">
-          <div class="avatar" aria-hidden="true"></div>
-          <figcaption style="text-align:center;padding:0 24px 28px">Espaço de Psicologia — substitua por uma foto profissional ou marca pessoal.</figcaption>
-        </figure>
-      </div>
-    </section>
+    </header>
 
-    <!-- VALOR EM 3 PONTOS -->
-    <section aria-labelledby="valor-title">
-      <h2 id="valor-title">Como trabalho</h2>
-      <p class="muted">Três pilares que guiam o processo terapêutico.</p>
-      <div class="grid-3" style="margin-top:16px">
-        <div class="card">
-          <h3>Base científica</h3>
-          <p class="muted">Protocolos validados, psicoeducação clara e objetivos definidos em conjunto.</p>
-        </div>
-        <div class="card">
-          <h3>Acolhimento real</h3>
-          <p class="muted">Ambiente seguro, empático e sem julgamentos, respeitando sua história e seu tempo.</p>
-        </div>
-        <div class="card">
-          <h3>Resultados mensuráveis</h3>
-          <p class="muted">Acompanhamento de progresso com devolutivas objetivas e plano vivo de tratamento.</p>
-        </div>
-      </div>
-    </section>
+    <main id="top">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="chips" role="list" aria-label="destaques">
+                    <span class="chip">Professor Harry</span>
+                    <span class="chip">Violão • Teclado • Canto • Teoria</span>
+                    <span class="chip">Online e Presencial</span>
+                </div>
 
-    <!-- ATUAÇÃO -->
-    <section id="atuacao" aria-labelledby="atuacao-title">
-      <h2 id="atuacao-title">Áreas de atuação</h2>
-      <p class="muted">Abordagem integrativa com foco em:</p>
-      <div class="grid-auto" style="margin-top:16px">
-        <div class="card"><h3>Ansiedade & Estresse</h3><p class="muted">Técnicas cognitivo-comportamentais e regulação emocional.</p></div>
-        <div class="card"><h3>Depressão</h3><p class="muted">Intervenções baseadas em evidências e reconstrução de rotina significativa.</p></div>
-        <div class="card"><h3>Relacionamentos</h3><p class="muted">Comunicação assertiva e terapia de casais.</p></div>
-        <div class="card"><h3>Autoconhecimento</h3><p class="muted">Valores, propósito e fortalecimento da autoestima.</p></div>
-        <div class="card"><h3>Carreira & Estudos</h3><p class="muted">Organização de vida acadêmica e orientação profissional.</p></div>
-        <div class="card"><h3>Saúde da Mulher</h3><p class="muted">Acolhimento em diferentes ciclos e autocuidado.</p></div>
-      </div>
-    </section>
-
-    <!-- SERVIÇOS -->
-    <section id="servicos" aria-labelledby="servicos-title">
-      <h2 id="servicos-title">Serviços</h2>
-      <p class="muted">Escolha o formato que melhor se adapta a você.</p>
-      <div class="grid-3" style="margin-top:16px">
-        <div class="card">
-          <h3>Psicoterapia individual</h3>
-          <p class="muted">Sessões de 50 min • Online ou presencial</p>
-          <p class="muted">Plano personalizado e acompanhamento contínuo.</p>
-          <a class="btn primary" href="#contato" style="margin-top:12px">Agendar</a>
-        </div>
-        <div class="card">
-          <h3>Terapia de casais</h3>
-          <p class="muted">Sessões de 60–75 min • Online ou presencial</p>
-          <p class="muted">Foco em comunicação, vínculo e resolução de conflitos.</p>
-          <a class="btn primary" href="#contato" style="margin-top:12px">Agendar</a>
-        </div>
-        <div class="card">
-          <h3>Avaliação psicológica</h3>
-          <p class="muted">Conforme demanda • Devolutiva estruturada</p>
-          <p class="muted">Instrumentos e relatórios quando necessários.</p>
-          <a class="btn primary" href="#contato" style="margin-top:12px">Agendar</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- FORMAÇÕES -->
-    <section id="formacoes" aria-labelledby="formacoes-title">
-      <h2 id="formacoes-title">Formações & Certificações</h2>
-      <p class="muted">Resumo da trajetória acadêmica e clínica.</p>
-      <ol class="timeline" style="margin-top:16px">
-        <li>
-          <span class="dot" aria-hidden="true"></span>
-          <p class="muted"><strong>2018–2023</strong> — Bacharelado em Psicologia • Universidade XYZ — CRP ativo</p>
-        </li>
-        <li>
-          <span class="dot" aria-hidden="true"></span>
-          <p class="muted"><strong>2023–2024</strong> — Pós-graduação em TCC • Instituição ABC — foco em ansiedade e depressão</p>
-        </li>
-        <li>
-          <span class="dot" aria-hidden="true"></span>
-          <p class="muted"><strong>2024–2025</strong> — Formação em Terapia de Casais / CNV • Instituição DEF</p>
-        </li>
-        <li>
-          <span class="dot" aria-hidden="true"></span>
-          <p class="muted"><strong>Atual</strong> — Educação continuada & supervisão clínica • workshops e congressos</p>
-        </li>
-      </ol>
-    </section>
-
-    <!-- DEPOIMENTOS -->
-    <section aria-labelledby="dep-title">
-      <h2 id="dep-title">O que pacientes dizem</h2>
-      <p class="muted">Comentários anônimos coletados com consentimento.</p>
-      <div class="grid-auto" style="margin-top:16px">
-        <figure class="card"><blockquote>“Aprendi a lidar com a ansiedade de forma prática e humana.”</blockquote><figcaption>Paciente verificado</figcaption></figure>
-        <figure class="card"><blockquote>“Sessões acolhedoras e objetivas; me senti realmente ouvido(a).”</blockquote><figcaption>Paciente verificado</figcaption></figure>
-        <figure class="card"><blockquote>“A terapia nos ajudou a reconstruir nossa comunicação no dia a dia.”</blockquote><figcaption>Paciente verificado</figcaption></figure>
-      </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section id="contato" aria-labelledby="contato-title">
-      <h2 id="contato-title">Pronta para começar?</h2>
-      <p class="muted">Preencha o formulário para uma sessão de avaliação. Responderei com orientações e horários disponíveis.</p>
-      <div class="card" style="margin-top:16px">
-        <form id="form-contato" novalidate>
-          <div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">
-            <div>
-              <label for="nome">Nome</label>
-              <input id="nome" name="nome" type="text" autocomplete="name" required placeholder="Seu nome completo" />
+                <div class="hero-grid">
+                    <div class="hero-left">
+                        <h1 class="title"><span class="gradient-text">Aprenda música</span> do zero ao avançado, com
+                            técnica moderna e foco no seu repertório.</h1>
+                        <p class="subtitle">Uma experiência de aprendizado com estética premium (estilo Apple) e
+                            tecnologia a seu favor (toque Google AI): conteúdo personalizado, feedback imediato e
+                            materiais interativos.</p>
+                        <div class="cta">
+                            <a class="btn btn-primary" href="#contato">Agendar Aula Experimental</a>
+                            <a class="btn btn-ghost" href="#amostras">Ouvir demonstrações</a>
+                        </div>
+                        <div class="hero-card" style="margin-top:20px">
+                            <div class="wave" aria-hidden="true"></div>
+                            <p class="helper" style="margin-top:10px">Dica: experimente com fones. Você vai perceber a
+                                dinâmica, timbre e articulação trabalhadas nas aulas.</p>
+                        </div>
+                    </div>
+                    <div class="hero-right card">
+                        <div class="pill" style="margin-bottom:10px"><span>🎯</span>Plano sob medida pra você</div>
+                        <p style="margin:0 0 10px">Metodologia em 3 pilares:</p>
+                        <ul style="margin:0 0 12px 18px;color:var(--muted)">
+                            <li>🎵 Técnica sólida e musicalidade</li>
+                            <li>📚 Teoria aplicada ao repertório</li>
+                            <li>🧠 Estudo inteligente (metas e hábitos)</li>
+                        </ul>
+                        <a class="btn btn-primary" href="#precos" style="width:100%;text-align:center">Ver planos e
+                            valores</a>
+                    </div>
+                </div>
             </div>
-            <div>
-              <label for="email">E-mail</label>
-              <input id="email" name="email" type="email" autocomplete="email" required minlength="5" placeholder="voce@exemplo.com" />
-            </div>
-          </div>
-          <div>
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" required placeholder="Conte brevemente sua demanda (ex.: ansiedade, organização de estudos, relacionamento)"></textarea>
-          </div>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-            <button class="btn primary" type="submit">Enviar mensagem</button>
-            <a class="btn" id="whats-link" href="https://wa.me/0000000000000" target="_blank" rel="noopener">Falar no WhatsApp</a>
-          </div>
-          <p id="status" class="muted" role="status" aria-live="polite" style="margin:6px 2px 0"></p>
-        </form>
-        <ul class="muted" style="margin-top:14px;list-style:none;padding:0">
-          <li>• E-mail: contato@psihaiancastro.com</li>
-          <li>• Endereço: Rua Exemplo, 123 — Bairro, Cidade/UF</li>
-        </ul>
-      </div>
-    </section>
-  </main>
+        </section>
 
-  <footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
-      <span>© <span id="ano"></span> Dra. Haiane Castro — CRP 00/00000</span>
-      <span><a href="#">Política de Privacidade</a> · <a href="#">Termos de Uso</a></span>
+        <!-- Sobre -->
+        <section id="sobre">
+            <div class="container stack">
+                <div class="head">
+                    <h2 class="h2">Sobre o Professor</h2>
+                    <p class="lead">Mais de 10 anos de prática musical entre palco e estúdio, com didática clara e foco
+                        em resultado.</p>
+                </div>
+                <div class="grid">
+                    <div class="col-8 card reveal">
+                        <h3>Quem é o Harry?</h3>
+                        <p>Harry é professor de música e multi-instrumentista. Nas aulas, une técnica, repertório e
+                            ferramentas digitais para acelerar sua evolução — sem perder o prazer de tocar.</p>
+                    </div>
+                    <div class="col-4 card reveal">
+                        <h3>Certificações & Destaques</h3>
+                        <ul style="margin:0 0 0 18px;color:var(--muted)">
+                            <li>Formação em teoria e harmonia</li>
+                            <li>Experiência com alunos iniciantes a avançados</li>
+                            <li>Preparação para audições e palcos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aulas -->
+        <section id="aulas">
+            <div class="container stack">
+                <div class="head">
+                    <h2 class="h2">Formatos de Aula</h2>
+                    <p class="lead">Escolha a modalidade ideal e tenha um plano que respeita seu tempo e objetivo.</p>
+                </div>
+                <div class="grid">
+                    <div class="col-4 card reveal">
+                        <div class="pill">🎸 Violão popular</div>
+                        <h3>Ritmos, batidas e dedilhados</h3>
+                        <p>Aprenda do básico ao fingerstyle. Repertório popular e exercícios práticos.</p>
+                    </div>
+                    <div class="col-4 card reveal">
+                        <div class="pill">🎹 Teclado / Piano</div>
+                        <h3>Acordes, campos harmônicos</h3>
+                        <p>Base sólida para tocar e acompanhar; percepção e leitura rítmica.</p>
+                    </div>
+                    <div class="col-4 card reveal">
+                        <div class="pill">🎤 Canto</div>
+                        <h3>Respiração, apoio e afinação</h3>
+                        <p>Aquecimento vocal, colocação de voz e interpretação musical.</p>
+                    </div>
+                    <div class="col-4 card reveal">
+                        <div class="pill">📘 Teoria e Harmonia</div>
+                        <h3>Entenda o porquê dos sons</h3>
+                        <p>Escalas, intervalos, progressões e análise aplicada ao seu repertório.</p>
+                    </div>
+                    <div class="col-4 card reveal">
+                        <div class="pill">🧑‍💻 Online / Presencial</div>
+                        <h3>Aprenda de onde estiver</h3>
+                        <p>Aulas ao vivo, materiais digitais e gravação de trechos para revisão.</p>
+                    </div>
+                    <div class="col-4 card reveal">
+                        <div class="pill">🎯 Mentoria</div>
+                        <h3>Plano de estudos</h3>
+                        <p>Rotina inteligente, metas semanais e acompanhamento contínuo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Amostras / Demo -->
+        <section id="amostras">
+            <div class="container stack">
+                <div class="head">
+                    <h2 class="h2">Amostras de Áudio</h2>
+                    <p class="lead">Sinta a vibe: trechos de estudo e performance usados em aula.</p>
+                </div>
+                <div class="grid">
+                    <div class="col-6 card reveal track">
+                        <div class="icon">🎵</div>
+                        <div style="flex:1">
+                            <strong>Violão — groove e dinâmica</strong>
+                            <audio controls src="" preload="none">Seu navegador não suporta áudio embutido.</audio>
+                            <p class="helper">Substitua o atributo <code>src</code> por um arquivo .mp3 seu.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 card reveal track">
+                        <div class="icon">🎹</div>
+                        <div style="flex:1">
+                            <strong>Teclado — voicings e condução</strong>
+                            <audio controls src="" preload="none"></audio>
+                        </div>
+                    </div>
+                    <div class="col-6 card reveal track">
+                        <div class="icon">🎤</div>
+                        <div style="flex:1">
+                            <strong>Canto — apoio e articulação</strong>
+                            <audio controls src="" preload="none"></audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metodologia -->
+        <section id="metodologia">
+            <div class="container stack">
+                <div class="head">
+                    <h2 class="h2">Como você vai aprender</h2>
+                    <p class="lead">Metodologia prática, com estética e tecnologia a seu favor.</p>
+                </div>
+                <div class="grid">
+                    <div class="col-4 card reveal">
+                        <div class="pill">🧩 Personalização</div>
+                        <h3>Aula feita para você</h3>
+                        <p>Conteúdo moldado ao seu nível, estilo e objetivos musicais.</p>
+                    </div>
+                    <div class="col-4 card reveal">
+                        <div class="pill">⚡ Feedback rápido</div>
+                        <h3>Correção que acelera</h3>
+                        <p>Pequenos ajustes com grande impacto no timbre, tempo e técnica.</p>
+                    </div>
+                    <div class="col-4 card reveal">
+                        <div class="pill">🧪 Materiais interativos</div>
+                        <h3>PDFs, backing tracks e vídeos</h3>
+                        <p>Biblioteca própria para você revisar e praticar quando quiser.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preços/Planos -->
+        <section id="precos">
+            <div class="container stack">
+                <div class="head">
+                    <h2 class="h2">Planos</h2>
+                    <p class="lead">Transparente, direto ao ponto. Escolha a duração ideal.</p>
+                </div>
+                <div class="grid">
+                    <div class="col-4 card reveal">
+                        <div class="pill">🔹 Essencial</div>
+                        <h3 class="price">R$ 80 <small>/ 30 min</small></h3>
+                        <p>Para ajustes rápidos, foco em um tópico por semana.</p>
+                        <a class="btn btn-ghost" href="#contato">Quero este</a>
+                    </div>
+
+                    <div class="col-4 card reveal" style="outline:2px solid var(--ring)">
+                        <div class="pill">✨ Recomendado</div>
+                        <h3 class="price">R$ 140 <small>/ 60 min</small></h3>
+                        <p>O equilíbrio perfeito entre teoria e prática.</p>
+                        <a class="btn btn-primary" href="#contato">Quero este</a>
+                    </div>
+
+                    <div class="col-4 card reveal">
+                        <div class="pill">🎁 Pacote</div>
+                        <h3 class="price">R$ 520 <small>/ 4 aulas</small></h3>
+                        <p>Economia mensal com plano contínuo e metas claras.</p>
+                        <a class="btn btn-ghost" href="#contato">Quero este</a>
+                    </div>
+                </div>
+                <p class="helper">* Valores exemplificativos — ajuste conforme sua realidade.</p>
+            </div>
+        </section>
+
+
+        <!-- Depoimentos -->
+        <section id="depoimentos">
+            <div class="container stack">
+                <div class="head">
+                    <h2 class="h2">O que os alunos dizem</h2>
+                    <p class="lead">Resultados reais de quem estuda com o Harry.</p>
+                </div>
+                <div class="grid">
+                    <div class="col-4 card reveal">
+                        <p>“Em 3 meses já estava tocando meu repertório de MPB.”</p>
+                        <p class="helper">— Ana, iniciante</p>
+                    </div>
+                    <div class="col-4 card reveal">
+                        <p>“Aulas leves, mas muito objetivas. A técnica evoluiu demais.”</p>
+                        <p class="helper">— Lucas, intermediário</p>
+                    </div>
+                    <div class="col-4 card reveal">
+                        <p>“Gostei da gravação dos trechos: revisar depois fez muita diferença.”</p>
+                        <p class="helper">— Bruno, canto</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <div class="container stack">
+                <div class="head">
+                    <h2 class="h2">Perguntas frequentes</h2>
+                    <p class="lead">Tudo para começar com confiança.</p>
+                </div>
+                <div class="stack">
+                    <details class="reveal">
+                        <summary>Preciso ter instrumento?</summary>
+                        <p class="helper">É ideal, mas dá pra começar com noções básicas e exercícios rítmicos até
+                            adquirir um.</p>
+                    </details>
+                    <details class="reveal">
+                        <summary>As aulas online funcionam?</summary>
+                        <p class="helper">Sim! Uso materiais, compartilhamento de tela e envio de gravações após a aula.
+                        </p>
+                    </details>
+                    <details class="reveal">
+                        <summary>Tem certificação?</summary>
+                        <p class="helper">Certificado de participação/nível mediante carga horária concluída.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato">
+            <div class="container stack">
+                <div class="head">
+                    <h2 class="h2">Agende sua aula</h2>
+                    <p class="lead">Preencha o formulário e receba retorno ainda hoje.</p>
+                </div>
+                <div class="grid">
+                    <div class="col-8 card reveal">
+                        <form id="contatoForm" novalidate>
+                            <div class="field">
+                                <label for="nome">Nome</label>
+                                <input id="nome" name="nome" placeholder="Seu nome" required />
+                            </div>
+                            <div class="field">
+                                <label for="email">E-mail</label>
+                                <input id="email" name="email" type="email" placeholder="voce@exemplo.com" required />
+                            </div>
+                            <div class="field">
+                                <label for="instrumento">Instrumento</label>
+                                <select id="instrumento" name="instrumento" required>
+                                    <option value="">Selecione…</option>
+                                    <option>Violão</option>
+                                    <option>Teclado/Piano</option>
+                                    <option>Canto</option>
+                                    <option>Teoria/Harmonia</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="mensagem">Mensagem</label>
+                                <textarea id="mensagem" name="mensagem" rows="5"
+                                    placeholder="Conte um pouco sobre seu objetivo musical"></textarea>
+                            </div>
+                            <div style="display:flex;gap:12px;flex-wrap:wrap">
+                                <button class="btn btn-primary" type="submit">Enviar</button>
+                                <a id="zapLink" class="btn btn-ghost" target="_blank" rel="noopener" href="#">Falar no
+                                    WhatsApp</a>
+                            </div>
+                            <p class="helper">⚠️ Ajuste o número do WhatsApp no código antes de publicar.</p>
+                        </form>
+                    </div>
+                    <div class="col-4 card reveal">
+                        <h3>Contato direto</h3>
+                        <p class="helper">E-mail: <a
+                                href="mailto:contato@harrymusica.com">contato@harrymusica.com</a><br>WhatsApp: <a
+                                target="_blank" rel="noopener" href="#">(00) 00000-0000</a></p>
+                        <p class="helper">Atendimento: seg–sex, 9h às 19h.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container"
+            style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+            <p>© <span id="ano"></span> Harry Música. Todos os direitos reservados.</p>
+            <a class="pill" href="#top">Voltar ao topo ↑</a>
+        </div>
+    </footer>
+
+    <div class="toast" aria-live="polite" aria-atomic="true" hidden>
+        <div class="bubble">Mensagem enviada ✅</div>
     </div>
-  </footer>
 
-  <script>
-    // Ano automático
-    document.getElementById('ano').textContent = new Date().getFullYear();
-
-    // Scroll suave para âncoras
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{
-        const id=a.getAttribute('href');
-        if(id.length>1){
-          const el=document.querySelector(id);
-          if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
-        }
-      })
-    })
-
-    // Validação simples do formulário + montar link do WhatsApp com a mensagem
-    const form=document.getElementById('form-contato');
-    const status=document.getElementById('status');
-    const whats=document.getElementById('whats-link');
-
-    function sanitize(s){return s.replace(/\s+/g,' ').trim();}
-
-    form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const nome=sanitize(form.nome.value||'');
-      const email=sanitize(form.email.value||'');
-      const msg=sanitize(form.mensagem.value||'');
-
-      if(!nome || !email || !msg){
-        status.textContent='Preencha todos os campos.'; return;
-      }
-      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){
-        status.textContent='Informe um e-mail válido.'; return;
-      }
-
-      // Simulação de envio local
-      status.textContent='Mensagem enviada com sucesso! Em breve entro em contato.';
-      form.reset();
-    });
-
-    // Atualiza link do WhatsApp com mensagem preenchida
-    ['nome','mensagem'].forEach(id=>{
-      document.getElementById(id).addEventListener('input',()=>{
-        const nome=sanitize(form.nome.value||'');
-        const texto=sanitize(form.mensagem.value||'');
-        const base='https://wa.me/0000000000000?text=';
-        const payload=encodeURIComponent(`Olá, sou ${nome||'Paciente'}. ${texto||'Gostaria de agendar uma avaliação.'}`);
-        whats.href=base+payload;
-      })
-    })
-  </script>
+    <script src="script.js" > </script>
 </body>
+
 </html>
