@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Haiane Castro • Psicologia</title>
+  <meta name="description" content="Psicóloga para jovens e adultos. Atendimento online e presencial. Ansiedade, depressão, relacionamentos e desenvolvimento pessoal.">
+  <style>
+    :root{
+      --bg:#ffffff;--text:#0f172a;--muted:#475569;--line:#e2e8f0;--brand:#0b1220;--ring:#0ea5e9;
+      --card:#ffffff;--shadow:0 10px 30px rgba(2,6,23,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1120px;margin-inline:auto;padding:0 20px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:.875rem 1.25rem;border-radius:999px;font-weight:600;border:1px solid var(--line);background:#fff;box-shadow:0 1px 2px rgba(2,6,23,.04)}
+    .btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .btn:hover{transform:translateY(-1px)}
+    .tag{display:inline-flex;gap:.5rem;align-items:center;font-size:.75rem;color:#0f172a;padding:.375rem .75rem;border:1px solid var(--line);border-radius:999px;background:#fff}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(10px);background:rgba(255,255,255,.7);border-bottom:1px solid var(--line);z-index:50}
+    .nav{height:64px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:.75rem;align-items:center}
+    .brand .logo{height:32px;width:32px;border-radius:12px;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:800;font-size:.75rem}
+    .menu{display:none;gap:1.25rem}
+    .menu a{font-size:.95rem;color:#1f2937}
+
+    /* Hero */
+    .hero{padding:64px 0 48px}
+    .h1{font-size:clamp(2rem,5vw,3.25rem);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+    .lead{color:var(--muted);font-size:clamp(1rem,2.2vw,1.125rem);max-width:60ch}
+    .hero-grid{display:grid;gap:40px;grid-template-columns:1.2fr .8fr}
+    .figure{position:relative;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);overflow:hidden;background:linear-gradient(140deg,#f8fafc, #eef2ff 30%, #ecfeff)}
+    .figure .avatar{height:96px;width:96px;border-radius:999px;background:#e2e8f0;margin:28px auto}
+
+    /* Sections */
+    section{padding:56px 0}
+    h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.01em}
+    .muted{color:var(--muted)}
+    .grid-3{display:grid;gap:20px;grid-template-columns:repeat(3,1fr)}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:22px}
+
+    /* Timeline */
+    .timeline{position:relative;border-left:2px solid var(--line);margin-left:10px;padding-left:18px}
+    .timeline li{margin:18px 0}
+    .dot{position:absolute;left:-6px;transform:translateX(-50%);width:10px;height:10px;background:var(--brand);border-radius:999px;margin-top:8px}
+
+    /* Testimonials */
+    .grid-auto{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    blockquote{margin:0;color:#111827}
+    figcaption{color:var(--muted);font-size:.9rem;margin-top:8px}
+
+    /* Contact */
+    form{display:grid;gap:14px}
+    input,textarea{width:100%;padding:.9rem 1rem;border:1px solid var(--line);border-radius:14px;font:inherit;background:#fff}
+    input:focus,textarea:focus{outline:2px solid transparent;box-shadow:0 0 0 4px rgba(14,165,233,.25)}
+    textarea{min-height:120px;resize:vertical}
+
+    /* Footer */
+    footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.95rem}
+
+    /* Responsive */
+    @media (max-width:960px){
+      .menu{display:none}
+      .hero-grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:640px){
+      .grid-3{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- Background glow -->
+  <div aria-hidden="true" style="position:fixed;inset:0;z-index:-1;overflow:hidden">
+    <div style="position:absolute;top:-80px;left:50%;width:700px;height:700px;translate:-50% 0;filter:blur(70px);background:radial-gradient(600px 600px at 50% 30%, #e2e8f0, transparent)"></div>
+    <div style="position:absolute;top:-60px;right:-10%;width:440px;height:440px;filter:blur(70px);background:radial-gradient(400px 400px at 60% 40%, #dbeafe, transparent)"></div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Ir para o início">
+        <span class="logo" aria-hidden>HC</span>
+        <span>
+          <strong>Dra. Haiane Castro</strong><br>
+          <small class="muted">Psicóloga • CRP 00/00000</small>
+        </span>
+      </a>
+      <nav class="menu" aria-label="principal">
+        <a href="#atuacao">Atuação</a>
+        <a href="#formacoes">Formações</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="btn" href="#contato">Agendar sessão →</a>
+    </div>
+  </header>
+
+  <main id="inicio" class="container">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div>
+          <h1 id="hero-title" class="h1">Cuidado psicológico com clareza, empatia e ciência.</h1>
+          <p class="lead">Atendo jovens e adultos em terapia individual e de casais. Minha abordagem integra evidências científicas, acolhimento e planos personalizados para ansiedade, depressão, estresse, relacionamentos e desenvolvimento pessoal. Atendimento <strong>online</strong> e <strong>presencial</strong>.</p>
+          <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap">
+            <a class="btn primary" href="#contato">Agendar avaliação</a>
+            <a class="btn" href="#servicos">Ver serviços</a>
+          </div>
+          <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;color:#334155;font-size:.85rem">
+            <span class="tag"><span style="width:8px;height:8px;border-radius:999px;background:#10b981"></span>Atendimento online</span>
+            <span class="tag"><span style="width:8px;height:8px;border-radius:999px;background:#3b82f6"></span>Presencial</span>
+            <span class="tag"><span style="width:8px;height:8px;border-radius:999px;background:#8b5cf6"></span>Sigilo garantido</span>
+          </div>
+        </div>
+        <figure class="figure" aria-label="Foto/brand da psicóloga">
+          <div class="avatar" aria-hidden="true"></div>
+          <figcaption style="text-align:center;padding:0 24px 28px">Espaço de Psicologia — substitua por uma foto profissional ou marca pessoal.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- VALOR EM 3 PONTOS -->
+    <section aria-labelledby="valor-title">
+      <h2 id="valor-title">Como trabalho</h2>
+      <p class="muted">Três pilares que guiam o processo terapêutico.</p>
+      <div class="grid-3" style="margin-top:16px">
+        <div class="card">
+          <h3>Base científica</h3>
+          <p class="muted">Protocolos validados, psicoeducação clara e objetivos definidos em conjunto.</p>
+        </div>
+        <div class="card">
+          <h3>Acolhimento real</h3>
+          <p class="muted">Ambiente seguro, empático e sem julgamentos, respeitando sua história e seu tempo.</p>
+        </div>
+        <div class="card">
+          <h3>Resultados mensuráveis</h3>
+          <p class="muted">Acompanhamento de progresso com devolutivas objetivas e plano vivo de tratamento.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATUAÇÃO -->
+    <section id="atuacao" aria-labelledby="atuacao-title">
+      <h2 id="atuacao-title">Áreas de atuação</h2>
+      <p class="muted">Abordagem integrativa com foco em:</p>
+      <div class="grid-auto" style="margin-top:16px">
+        <div class="card"><h3>Ansiedade & Estresse</h3><p class="muted">Técnicas cognitivo-comportamentais e regulação emocional.</p></div>
+        <div class="card"><h3>Depressão</h3><p class="muted">Intervenções baseadas em evidências e reconstrução de rotina significativa.</p></div>
+        <div class="card"><h3>Relacionamentos</h3><p class="muted">Comunicação assertiva e terapia de casais.</p></div>
+        <div class="card"><h3>Autoconhecimento</h3><p class="muted">Valores, propósito e fortalecimento da autoestima.</p></div>
+        <div class="card"><h3>Carreira & Estudos</h3><p class="muted">Organização de vida acadêmica e orientação profissional.</p></div>
+        <div class="card"><h3>Saúde da Mulher</h3><p class="muted">Acolhimento em diferentes ciclos e autocuidado.</p></div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" aria-labelledby="servicos-title">
+      <h2 id="servicos-title">Serviços</h2>
+      <p class="muted">Escolha o formato que melhor se adapta a você.</p>
+      <div class="grid-3" style="margin-top:16px">
+        <div class="card">
+          <h3>Psicoterapia individual</h3>
+          <p class="muted">Sessões de 50 min • Online ou presencial</p>
+          <p class="muted">Plano personalizado e acompanhamento contínuo.</p>
+          <a class="btn primary" href="#contato" style="margin-top:12px">Agendar</a>
+        </div>
+        <div class="card">
+          <h3>Terapia de casais</h3>
+          <p class="muted">Sessões de 60–75 min • Online ou presencial</p>
+          <p class="muted">Foco em comunicação, vínculo e resolução de conflitos.</p>
+          <a class="btn primary" href="#contato" style="margin-top:12px">Agendar</a>
+        </div>
+        <div class="card">
+          <h3>Avaliação psicológica</h3>
+          <p class="muted">Conforme demanda • Devolutiva estruturada</p>
+          <p class="muted">Instrumentos e relatórios quando necessários.</p>
+          <a class="btn primary" href="#contato" style="margin-top:12px">Agendar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMAÇÕES -->
+    <section id="formacoes" aria-labelledby="formacoes-title">
+      <h2 id="formacoes-title">Formações & Certificações</h2>
+      <p class="muted">Resumo da trajetória acadêmica e clínica.</p>
+      <ol class="timeline" style="margin-top:16px">
+        <li>
+          <span class="dot" aria-hidden="true"></span>
+          <p class="muted"><strong>2018–2023</strong> — Bacharelado em Psicologia • Universidade XYZ — CRP ativo</p>
+        </li>
+        <li>
+          <span class="dot" aria-hidden="true"></span>
+          <p class="muted"><strong>2023–2024</strong> — Pós-graduação em TCC • Instituição ABC — foco em ansiedade e depressão</p>
+        </li>
+        <li>
+          <span class="dot" aria-hidden="true"></span>
+          <p class="muted"><strong>2024–2025</strong> — Formação em Terapia de Casais / CNV • Instituição DEF</p>
+        </li>
+        <li>
+          <span class="dot" aria-hidden="true"></span>
+          <p class="muted"><strong>Atual</strong> — Educação continuada & supervisão clínica • workshops e congressos</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section aria-labelledby="dep-title">
+      <h2 id="dep-title">O que pacientes dizem</h2>
+      <p class="muted">Comentários anônimos coletados com consentimento.</p>
+      <div class="grid-auto" style="margin-top:16px">
+        <figure class="card"><blockquote>“Aprendi a lidar com a ansiedade de forma prática e humana.”</blockquote><figcaption>Paciente verificado</figcaption></figure>
+        <figure class="card"><blockquote>“Sessões acolhedoras e objetivas; me senti realmente ouvido(a).”</blockquote><figcaption>Paciente verificado</figcaption></figure>
+        <figure class="card"><blockquote>“A terapia nos ajudou a reconstruir nossa comunicação no dia a dia.”</blockquote><figcaption>Paciente verificado</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" aria-labelledby="contato-title">
+      <h2 id="contato-title">Pronta para começar?</h2>
+      <p class="muted">Preencha o formulário para uma sessão de avaliação. Responderei com orientações e horários disponíveis.</p>
+      <div class="card" style="margin-top:16px">
+        <form id="form-contato" novalidate>
+          <div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">
+            <div>
+              <label for="nome">Nome</label>
+              <input id="nome" name="nome" type="text" autocomplete="name" required placeholder="Seu nome completo" />
+            </div>
+            <div>
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" required minlength="5" placeholder="voce@exemplo.com" />
+            </div>
+          </div>
+          <div>
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" required placeholder="Conte brevemente sua demanda (ex.: ansiedade, organização de estudos, relacionamento)"></textarea>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+            <button class="btn primary" type="submit">Enviar mensagem</button>
+            <a class="btn" id="whats-link" href="https://wa.me/0000000000000" target="_blank" rel="noopener">Falar no WhatsApp</a>
+          </div>
+          <p id="status" class="muted" role="status" aria-live="polite" style="margin:6px 2px 0"></p>
+        </form>
+        <ul class="muted" style="margin-top:14px;list-style:none;padding:0">
+          <li>• E-mail: contato@psihaiancastro.com</li>
+          <li>• Endereço: Rua Exemplo, 123 — Bairro, Cidade/UF</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span>© <span id="ano"></span> Dra. Haiane Castro — CRP 00/00000</span>
+      <span><a href="#">Política de Privacidade</a> · <a href="#">Termos de Uso</a></span>
+    </div>
+  </footer>
+
+  <script>
+    // Ano automático
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    // Scroll suave para âncoras
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){
+          const el=document.querySelector(id);
+          if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
+        }
+      })
+    })
+
+    // Validação simples do formulário + montar link do WhatsApp com a mensagem
+    const form=document.getElementById('form-contato');
+    const status=document.getElementById('status');
+    const whats=document.getElementById('whats-link');
+
+    function sanitize(s){return s.replace(/\s+/g,' ').trim();}
+
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const nome=sanitize(form.nome.value||'');
+      const email=sanitize(form.email.value||'');
+      const msg=sanitize(form.mensagem.value||'');
+
+      if(!nome || !email || !msg){
+        status.textContent='Preencha todos os campos.'; return;
+      }
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){
+        status.textContent='Informe um e-mail válido.'; return;
+      }
+
+      // Simulação de envio local
+      status.textContent='Mensagem enviada com sucesso! Em breve entro em contato.';
+      form.reset();
+    });
+
+    // Atualiza link do WhatsApp com mensagem preenchida
+    ['nome','mensagem'].forEach(id=>{
+      document.getElementById(id).addEventListener('input',()=>{
+        const nome=sanitize(form.nome.value||'');
+        const texto=sanitize(form.mensagem.value||'');
+        const base='https://wa.me/0000000000000?text=';
+        const payload=encodeURIComponent(`Olá, sou ${nome||'Paciente'}. ${texto||'Gostaria de agendar uma avaliação.'}`);
+        whats.href=base+payload;
+      })
+    })
+  </script>
+</body>
+</html>
